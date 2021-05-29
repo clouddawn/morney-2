@@ -1,11 +1,11 @@
 <template>
-      <Layout>Labels.vue</Layout>
+  <Layout>Labels.vue</Layout>
 </template>
 
 <script lang="ts">
 export default {
-name: "Labels",
-}
+  name: 'Labels',
+};
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,3 @@
-/*eslint-disable*/
 <template>
   <svg class="icon">
     <use v-bind:xlink:href="'#'+ name"/>
