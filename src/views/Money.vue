@@ -46,11 +46,38 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'Money',
-};
+  export default {
+    name: 'Money',
+  };
 </script>
 
 <style lang="scss" scoped>
-@import "~@/assets/style/helper.scss";
+  @import "~@/assets/style/helper.scss";
+  .tags {
+    font-size: 14px;
+    padding: 16px;
+    > .current {
+      display: flex;
+      > li {
+        background: #d9d9d9;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 16px;
+        margin-left: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+      }
+    }
+    > .new {
+      padding-top: 16px;
+      button {
+        background: transparent;
+        border: none;
+        color: #999;
+        border-bottom: 1px solid;
+        padding: 0 4px;
+      }
+    }
+  }
 </style>
