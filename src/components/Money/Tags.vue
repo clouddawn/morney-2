@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column-reverse;
     overflow: auto;
-
+    background: white;
     ::-webkit-scrollbar {
       display: none;
     }
