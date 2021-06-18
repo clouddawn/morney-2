@@ -30,6 +30,7 @@
     tags = tagList;
     localStorageKeyName: RecordItem[] = recordList;
     record: RecordItem = {tags: [], notes: '', type: '-', amount: 0};
+    recordList: any;
 
     onUpdateTags(value: string[]) {
       this.record.tags = value;
@@ -40,14 +41,12 @@
     }
 
     saveRecord() {
-      const record2: RecordItem = recordListModel.clone(this.record);
-      record2.createAt = new Date();
-      this.localStorageKeyName.push(record2);
+      recordListModel.create(this.record);
     }
 
     @Watch('recordList')
     onRecordListChange() {
-      recordListModel.save(this.localStorageKeyName);
+      recordListModel.save();
     }
   }
 
@@ -58,6 +57,7 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
   .notes {
     padding: 10px 0;
   }
