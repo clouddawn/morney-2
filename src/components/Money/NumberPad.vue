@@ -85,13 +85,15 @@
 
     .buttons {
       @extend %clearfix;
+      $bg: #f2f2f2;
 
       > button {
         width: 25%;
         height: 64px;
         float: left;
-        background: transparent;
-        border: none;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        background: darken($bg, 6%);
 
         &.ok {
           height: 128px;
@@ -102,34 +104,36 @@
           width: 50%;
         }
 
-        $bg: #f2f2f2;
-
-        &:nth-child(1) {
-          background: $bg;
-        }
-
-        &:nth-child(2), &:nth-child(5) {
-          background: darken($bg, 4%);
-        }
-
-        &:nth-child(3), &:nth-child(6), &:nth-child(9) {
-          background: darken($bg, 4*2%);
-        }
-
-        &:nth-child(4), &:nth-child(7), &:nth-child(10) {
-          background: darken($bg, 4*3%);
-        }
-
-        &:nth-child(8), &:nth-child(11), &:nth-child(13) {
-          background: darken($bg, 4*4%);
-        }
-
-        &:nth-child(14) {
-          background: darken($bg, 4*5%);
-        }
+        //
+        //
+        //&:nth-child(1) {
+        //  background: $bg;
+        //}
+        //
+        //&:nth-child(2), &:nth-child(5) {
+        //
+        //}
+        //
+        //&:nth-child(3), &:nth-child(6), &:nth-child(9) {
+        //  background: darken($bg, 4*2%);
+        //}
+        //
+        //&:nth-child(4), &:nth-child(7), &:nth-child(10) {
+        //  background: darken($bg, 4*3%);
+        //}
+        //
+        //&:nth-child(8), &:nth-child(11), &:nth-child(13) {
+        //  background: darken($bg, 4*4%);
+        //}
+        //
+        //&:nth-child(14) {
+        //  background: darken($bg, 4*5%);
+        //}
 
         &:nth-child(12) {
-          background: darken($bg, 4*6%);
+          background: #ff9c3f;
+          color: white;
+          font-size: 20px;
         }
       }
     }

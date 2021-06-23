@@ -17,7 +17,8 @@
 
   @Component
   export default class Types extends Vue {
-    @Prop() readonly value!: string;
+    @Prop(String) readonly value!: string;
+    @Prop(String) classPrefix?: string;
 
     selectType(type: string) {
       if (type !== '-' && type !== '+') {
@@ -30,7 +31,8 @@
 
 <style lang="scss" scoped>
   .types {
-    background: #c4c4c4;
+    background: #ffb73b;
+    color: white;
     display: flex;
     text-align: center;
     font-size: 24px;
@@ -43,14 +45,8 @@
       align-items: center;
       position: relative;
 
-      &.selected::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: #333333;
+      &.selected {
+        background: #f60;
 
       }
     }
