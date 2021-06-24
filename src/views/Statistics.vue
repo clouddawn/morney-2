@@ -16,6 +16,9 @@
       background: #f60;
     }
   }
+  ::v-deep .interval-tabs-item {
+    height: 48px;
+  }
 </style>
 
 <script lang="ts">
@@ -35,7 +38,3 @@
     recordTypeList = recordTypeList;
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
