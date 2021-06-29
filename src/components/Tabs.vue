@@ -39,6 +39,7 @@
     display: flex;
     text-align: center;
     font-size: 24px;
+    margin-top: 1px;
 
     &-item {
       width: 50%;
