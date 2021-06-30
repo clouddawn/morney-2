@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
-    <ol>
+    <ol v-if="groupList.length>0">
       <li v-for="(group,index) in groupList" :key="index">
         <h3 class="title">
           {{ beautify(group.title) }}
@@ -16,10 +16,19 @@
         </ol>
       </li>
     </ol>
+    <div v-else class="noResult">
+      目前没有相关记录
+    </div>
   </Layout>
 </template>
 
 <style scoped lang="scss">
+  .noResult {
+    padding: 24px;
+    text-align: center;
+    font-size: 18px;
+  }
+
   %item {
     padding: 8px 16px;
     line-height: 24px;
@@ -67,7 +76,7 @@
   })
   export default class Statistics extends Vue {
     tagString(tags: Tag[]) {
-      return tags.length === 0 ? '无' : tags.join(',');
+      return tags.length === 0 ? '无' : tags.map(t => t.name).join('，');
     }
 
     beautify(string: string) {
@@ -123,7 +132,7 @@
       this.$store.commit('fetchRecords');
     }
 
-    type = '-';
+    type = localStorage.getItem('is') || '-';
     recordTypeList = recordTypeList;
   }
 </script>

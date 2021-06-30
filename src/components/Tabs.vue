@@ -13,7 +13,7 @@
   import {Component, Prop} from 'vue-property-decorator';
 
   type DataSourceItem = { text: string, value: string }
-
+  // let is = localStorage.getItem('is');
   @Component
   export default class Tabs extends Vue {
     @Prop({required: true, type: Array}) dataSource!: DataSourceItem[];
@@ -25,9 +25,13 @@
     liClass(item: DataSourceItem) {
       return {selected: item.value === this.value, [this.classPrefix + '-tabs-item']: this.classPrefix};
     }
-
+    // initialSelect(is: string) {
+    //   this.$emit('update:value', is);
+    // }
     select(item: DataSourceItem) {
       this.$emit('update:value', item.value);
+      console.log(item);
+      console.log(this.dataSource);
     }
   }
 </script>

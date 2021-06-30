@@ -5,7 +5,7 @@
     <div class="notes">
       <FormItem field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateNotes"/>
     </div>
-    <Tags/>
+    <Tags @update:value = "record.tags = $event"/>
   </Layout>
 </template>
 
@@ -39,6 +39,9 @@
     }
 
     saveRecord() {
+      if(!this.record.tags || this.record.tags.length === 0){
+        return window.alert('请至少选择一个标签');
+      }
       this.$store.commit('createRecord', this.record);
     }
 
