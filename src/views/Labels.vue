@@ -14,7 +14,6 @@
 
 <script lang="ts">
 
-  import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
   import Button from '@/components/Button.vue';
   import tagHelper from '@/mixins/TagHelper';
@@ -59,12 +58,13 @@
   }
 
   .createTag {
-    background: #767676;
+    background: #f60;
     color: white;
     border-radius: 4px;
     border: none;
     height: 40px;
     padding: 0 16px;
+    font-size: 18px;
 
     &-wrapper {
       text-align: center;
