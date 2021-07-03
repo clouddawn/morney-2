@@ -11,7 +11,7 @@
           <li v-for="item in group.items" :key="item.id" class="record">
             <span>{{ tagString(item.tags) }}</span>
             <span class="itemNotes">{{ item.notes }}</span>
-            <span>￥{{ item.amount }}</span>
+            <span>{{ item.type }}{{ item.amount }}</span>
           </li>
         </ol>
       </li>
